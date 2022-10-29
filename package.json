@@ -1,0 +1,11 @@
+{
+  "name": "html-inert",
+  "version": "1.0.0",
+  "description": "A repository assessing HTML's inert attribute",
+  "keywords": [
+    "CSS",
+    "inert"
+  ],
+  "author": "James Sinkala <xinnks@gmail.com>",
+  "license": "Apache-2.0"
+}
