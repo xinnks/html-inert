@@ -1,0 +1,33 @@
+body{
+  padding: 1rem;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+body > div {
+  margin-bottom: 1rem;
+}
+
+nav{
+  margin-top: 10vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+main{
+  padding: 2rem;
+}
+
+a.page-nav{
+  padding: .3rem;
+  text-decoration: none;
+  color: black;
+  border: .2em gray solid;
+  background-color: blanchedalmond;
+}
+
+input{
+  margin: .2rem .3rem;
+}
