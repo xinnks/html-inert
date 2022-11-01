@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <title>Example 3 - Focus Trapping fix with `aria-hidden`</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+      .modal-overlay{
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(25, 25, 25, .4);
+        overflow: hidden;
+      }
+      .modal{
+        display: flex;
+        position: absolute;
+        top: 5vh;
+        margin-left: auto;
+        margin-right: auto;
+        left: calc((100vw - 320px) / 2);
+        flex-direction: column;
+        padding: 1rem;
+        border: 2px solid gray;
+        width: 320px;
+        background-color: bisque;
+      }
+      .hide{
+        display: none
+      }
+    </style>
+  </head>
+  
+  <body>
+    <main>
+      
+      <h1>Legacy Modals - with `aria-hidden`</h1>
+
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus vestibulum lorem sed risus.
+        </p>
+        <button class="open-modal">Register</button>
+      </div>
+    </main>
+
+    <div id="registration-modal" class="modal-overlay hide" role="dialog">
+      <div class="modal">
+        <h2 aria-label="Registration Modal">Registration</h2>
+        <p>Hello there, you can't focus outside my boundaries! :-)<p>
+        <form action="">
+          <div>
+            <input type="text" name="name" placeholder="Thunder Storm">
+          </div>
+          <div>
+            <input type="email" name="email" placeholder="example@mail.com">
+          </div>
+          <div>
+            <input type="password" name="password">
+          </div>
+          <div>
+            <legend>
+              Pet of choice:
+            </legend>
+            <label>
+              <input type="radio" value="cat" name="pet"> Cat
+            </label>
+            <label>
+              <input type="radio"  value="dog" name="pet"> Dog
+            </label>
+          </div>
+          <div>
+            <label for="terms">
+              <input type="checkbox"> Agree to <a href="#terms">terms</a>
+            </label>
+          </div>
+          <div>
+            <button>Save</button>
+            <button type="button" class="close-modal">Discard</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <nav>
+      <a class="page-nav" href="example-1.html"><< Previous Example</a>
+      <a class="page-nav" href="example-1.2.html">Next Example >></a>
+    </nav>
+
+    <script src="/js/trap-focus.js"></script>
+    <script src="/js/legacy-modal-1.1.js"></script>
+  </body>
+</html>
