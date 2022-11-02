@@ -4,7 +4,8 @@ body{
 }
 
 body,
-form{
+form,
+#registration-model{
   display: flex;
   flex-direction: column;
   padding: 1rem;
