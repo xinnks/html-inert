@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <title>Example 4 - Replacing Legacy Focus Trapping with `inert`</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+      .modal{
+        display: flex;
+        position: absolute;
+        top: 5vh;
+        margin-left: auto;
+        margin-right: auto;
+        left: calc((100vw - 320px) / 2);
+        flex-direction: column;
+        padding: 1rem;
+        border: 2px solid gray;
+        width: 320px;
+        background-color: bisque;
+      }
+      .hide{
+        display: none
+      }
+    </style>
+  </head>
+  
+  <body>
+    <main>
+      
+      <h1>Replacing Legacy Focus Trapping with `inert`</h1>
+
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus vestibulum lorem sed risus.
+        </p>
+        <button class="open-modal">Register</button>
+      </div>
+    
+      <nav>
+        <a class="page-nav" href="example-1.1.html"><< Previous Example</a>
+        <a class="page-nav" href="example-2.html">Next Example >></a>
+      </nav>
+    </main>
+
+    <div class="modal hide">
+      <h2>Registration</h2>
+      <p>Hello there, you can't focus outside my boundaries! :-)<p>
+      <form action="">
+        <div>
+          <input type="text" name="name" placeholder="Thunder Storm">
+        </div>
+        <div>
+          <input type="email" name="email" placeholder="example@mail.com">
+        </div>
+        <div>
+          <input type="password" name="password">
+        </div>
+        <div>
+          <legend>
+            Pet of choice:
+          </legend>
+          <label>
+            <input type="radio" value="cat" name="pet"> Cat
+          </label>
+          <label>
+            <input type="radio"  value="dog" name="pet"> Dog
+          </label>
+        </div>
+        <div>
+          <label for="terms">
+            <input type="checkbox"> Agree to <a href="#terms">terms</a>
+          </label>
+        </div>
+        <div>
+          <button>Save</button>
+          <button type="button" class="close-modal">Discard</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="/js/trap-focus.js"></script>
+    <script src="/js/legacy-modal-inert-replace.js"></script>
+  </body>
+</html>
