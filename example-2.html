@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <title>Example 5 - Implementing modals with inert</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+      [inert]{
+        filter: grayscale(1);
+        opacity: .2;
+      }
+      main{
+        background-color: rgb(177, 229, 231);
+        padding: 2rem;
+      }
+      body{
+        position: relative;
+      }
+      .modal{
+        display: flex;
+        position: absolute;
+        top: 5vh;
+        left: calc((100vw - 320px) / 2);
+        flex-direction: column;
+        padding: 1rem;
+        border: 2px solid gray;
+        width: 320px;
+        background-color: bisque;
+      }
+      .hide{
+        display: none
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      
+      <h1 tabindex="0">Modal Example with `inert`</h1>
+      <input name="someinput" type="text">
+      <button class="open-modal">Open Modal</button>
+      
+      <nav>
+        <a class="page-nav" href="example-1.2.html"><< Previous Example</a>
+        <a class="page-nav" href="example-3.html">Next Example >></a>
+      </nav>
+    </main>
+
+    <div class="modal hide" role="dialog">
+      <h2 aria-label="Modal title">Super Modal</h2>
+      <input type="text">
+      <p>Hello there, you can't focus outside my boundaries! :-)<p>
+      <button>Save</button>
+      <button class="close-modal">Discard</button>
+    </div>
+  </body>
+  
+  <script src="/js/trap-focus.js">
+  </script>
+  <script src="/js/modal.js">
+  </script>
+</html>
