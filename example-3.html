@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <title>Example 6 - Custom confirm box with inert</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+      [inert]{
+        filter: grayscale(1);
+        opacity: .2;
+      }
+      main{
+        background-color: rgb(177, 229, 231);
+        padding: 2rem;
+      }
+      body{
+        position: relative;
+      }
+      .confirm{
+        display: flex;
+        position: absolute;
+        top: 5vh;
+        left: calc((100vw - 320px) / 2);
+        flex-direction: column;
+        padding: 1rem;
+        border: 2px solid gray;
+        width: 320px;
+        background-color: bisque;
+      }
+      .hide{
+        display: none
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      
+      <h1 tabindex="0">Simple confirm box with `inert`</h1>
+      <div>
+        <textarea name="" id="" cols="30" rows="10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus vestibulum lorem sed risus.</textarea>
+      </div>
+      <div>
+        <button class="delete-prompt">Delete Comment</button>
+      </div>
+      
+      <nav>
+        <a class="page-nav" href="example-2.html"><< Previous Example</a>
+        <a class="page-nav" href="example-3.1.html">Next Example >></a>
+      </nav>
+    </main>
+
+    <div class="confirm hide" role="dialog">
+      <p>Are you sure about deleting this text?<p>
+      <button class="keep-text">Continue writing</button>
+      <button class="delete-text">Yes</button>
+    </div>
+  </body>
+  
+  <script src="/js/trap-focus.js">
+  </script>
+  <script src="/js/simple-modal.js">
+  </script>
+  <script src="/node_modules/wicg-inert/dist/inert.min.js"></script>
+</html>
