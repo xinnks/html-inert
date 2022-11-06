@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <title>Example 7 - Dialog modals</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+      [inert]{
+        filter: grayscale(1);
+        opacity: .2;
+      }
+      main{
+        background-color: rgb(177, 229, 231);
+        padding: 2rem;
+      }
+      body{
+        position: relative;
+      }
+      .modal{
+        display: flex;
+        position: absolute;
+        top: 5vh;
+      left: calc((100vw - 320px) / 2);
+        flex-direction: column;
+        padding: 1rem;
+        border: 2px solid gray;
+        width: 320px;
+        background-color: bisque;
+      }
+      .hide{
+        display: none
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      
+      <h1 tabindex="0">Dialog Modal</h1>
+      <button id="show-dialog">Open Dialog Modal</button>
+
+      <dialog>
+        <h2> Hello! I'm this dialog's heading. </h2>
+        <h3 tabindex="0">"Sub-quote here"</h3>
+        <input type="text">
+        <select name="" id="">
+          <option value="">One</option>
+        </select>
+        <button id="close-dialog">Close Dialog</button>
+      </dialog>
+      
+      <nav>
+        <a class="page-nav" href="example-3.html"><< Previous Example</a>
+        <a class="page-nav" href="example-4.html">Next Example >></a>
+      </nav>
+    </main>
+  </body>
+  
+  <script src="/js/dialog-modal.js">
+  </script>
+</html>
