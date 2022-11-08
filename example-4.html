@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <title>Example 8 - Slide-out navigation menu with inert</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+      [inert]{
+        filter: blur(1px) sepia(.2) brightness(.8) hue-rotate(60deg);
+      }
+      body{
+        padding: 0;
+        margin: 0;
+      }
+      .page-content{
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        margin: 0;
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        background-color: white;
+      }
+      .page-content > *{
+        width: 100%;
+      }
+      nav.navigation{
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 0;
+        margin: auto;
+        padding: 1rem;
+        padding-top: 1.5rem;
+        background-color: bisque;
+      }
+      .navigation > ul{
+        list-style: none;
+      }
+      .navigation > ul > li{
+        margin-top: 1rem;
+      }
+
+      .nav-hum {
+        position: absolute;
+        clip: rect(0, 0, 0, 0);
+      }
+
+      label[for="nav-hum"] {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 2;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'><path fill='none' d='M0 0H24V24H0z'/><path d='M21 18v2H3v-2h18zM17.404 3.904L22 8.5l-4.596 4.596-1.414-1.414L19.172 8.5 15.99 5.318l1.414-1.414zM12 11v2H3v-2h9zm0-7v2H3V4h9z'/></svg>");
+        background-size: contain;
+      }
+
+      .nav-hum:checked + label {
+        left: 215px;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'><path fill='none' d='M0 0H24V24H0z'/><path d='M21 18v2H3v-2h18zM6.596 3.904L8.01 5.318 4.828 8.5l3.182 3.182-1.414 1.414L2 8.5l4.596-4.596zM21 11v2h-9v-2h9zm0-7v2h-9V4h9z'/></svg>");
+      }
+
+      .nav-hum:checked ~ .page-content {
+        box-shadow: inset -1px 0 3px 0px rgba(0,0,0,0.5);
+        transform: translate(200px);
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" class="nav-hum" id="nav-hum">
+    <label for="nav-hum" tabindex="0"></label>
+
+    <nav class="navigation" aria-label="Main">
+      <h3>Slide-out Nav</h3>
+      <ul>
+        <li>
+          <a class="side-nav" href="index.html">Example 1</a>
+        </li>
+        <li>
+          <a class="side-nav" href="example-1.html">Example 2</a>
+        </li>
+        <li>
+          <a class="side-nav" href="example-1.1.html">Example 3</a>
+        </li>
+        <li>
+          <a class="side-nav" href="example-1.2.html">Example 4</a>
+        </li>
+        <li>
+          <a class="side-nav" href="example-2.html">Example 5</a>
+        </li>
+        <li>
+          <a class="side-nav" href="example-3.html">Example 6</a>
+        </li>
+        <li>
+          <a class="side-nav" href="example-3.1.html">Example 7</a>
+        </li>
+        <li>
+          <a class="side-nav" href="example-5.html">Example 9</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="page-content">
+      <h1>Slide-out side navigation menu</h1>
+      <p tabindex="0">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus vestibulum lorem sed risus.
+      </p>
+
+      <p tabindex="0">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus vestibulum lorem sed risus.
+      </p>
+
+      <p tabindex="0">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus vestibulum lorem sed risus.
+      </p>
+
+      <p tabindex="0">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus vestibulum lorem sed risus.
+      </p>
+
+      <p tabindex="0">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus vestibulum lorem sed risus.
+      </p>
+
+      <p tabindex="0">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus vestibulum lorem sed risus.
+      </p>
+
+      <p tabindex="0">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus vestibulum lorem sed risus.
+      </p>
+
+      <p tabindex="0">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus vestibulum lorem sed risus.
+      </p>
+      
+      <nav aria-label="Footer">
+        <a class="page-nav" href="example-3.html"><< Previous Example</a>
+        <a class="page-nav" href="example-5.html">Next Example >></a>
+      </nav>
+    </main>
+  </body>
+
+  <script src="/js/slide-out-navigation.js">
+  </script>
+</html>
