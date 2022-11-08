@@ -25,10 +25,14 @@ main{
   padding: 2rem;
 }
 
-a.page-nav{
+a.page-nav,
+a.side-nav{
   padding: .3rem;
   text-decoration: none;
   color: black;
+}
+
+a.page-nav{
   border: .2em gray solid;
   background-color: blanchedalmond;
 }
