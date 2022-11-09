@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <title>Example 9 - Authenticated feed guard form</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+      [inert]{
+        filter: grayscale(1);
+        opacity: .2;
+      }
+      main,
+      form,
+      .feed,
+      .feed-item{
+        display: flex;
+        flex-direction: column;
+      }
+      main{
+        padding: 2rem;
+      }
+      .feed-item{
+        background-color: rgb(177, 229, 231);
+        padding: 1.4rem;
+        font-size: 2em;
+        margin-bottom: 1rem;
+      }
+      .target-item{
+        background-color: rgb(4, 66, 68);
+        color: white;
+      }
+      body{
+        position: relative;
+      }
+      .authentication-form{
+        display: flex;
+        position: fixed;
+        top: 15vh;
+        left: calc((100vw - 320px) / 2);
+        flex-direction: column;
+        padding: 1rem;
+        border: 2px solid gray;
+        width: 320px;
+        background-color: bisque;
+      }
+      .hide{
+        display: none
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      
+      <div class="feed">
+        <div class="feed-item">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus vestibulum lorem sed risus.
+          </p>
+        </div>
+      </div>
+      
+      <nav>
+        <a class="page-nav" href="example-4.html"><< Previous Example</a>
+      </nav>
+    </main>
+
+    <div class="authentication-form hide" role="dialog">
+      <h2 aria-label="Authentication Form">Authenticaion Form</h2>
+      <p>Hello there, to keep enjoying our feed, please sign in! :-)<p>
+      <form action="">
+        <input type="text" name="email" placeholder="email">
+        <input type="password" name="password" placeholder="password">
+        <div>
+          <button class="close-modal">Sign In</button>
+        </div>
+      </form>
+    </div>
+  </body>
+
+  <script src="/js/trap-focus.js">
+  </script>
+  <script src="/js/feed-limit-modal.js">
+  </script>
+</html>
